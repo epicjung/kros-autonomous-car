@@ -1,0 +1,6 @@
+DWALocalPlannerROS:
+  acc_lim_x: 1.0
+  acc_lim_y: 0.3
+  min_vel_trans: 0.0
+  max_vel_trans: 13.889
+  holonomic_robot: true

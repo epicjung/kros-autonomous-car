@@ -1,0 +1,17 @@
+<launch>
+	<node pkg="simulation" type="simulation_node" name="simulation" output="screen">
+		<!-- <param name="initial_speed" type="double" value="13.889"/>
+		<param name="initial_x" type="double" value="156.902"/>
+		<param name="initial_y" type="double" value="-24.1359"/> -->
+		<param name="initial_speed" type="double" value="0.0"/>
+		<!-- <param name="initial_x" type="double" value="-0.30113"/>
+		<param name="initial_y" type="double" value="-1.42279"/> -->
+		<param name="initial_x" type="double" value="-5.61911"/>
+		<param name="initial_y" type="double" value="-3.91944"/>
+		<param name="initial_yaw" type="double" value="6.16358"/>
+		<param name="max_speed_obs" type="double" value="15.0"/>
+		<param name="max_time_seq" type="double" value="10.0"/>
+		<param name="filename" type="str" value="dynamic_static"/>
+	</node>
+
+</launch>
