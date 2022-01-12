@@ -339,6 +339,21 @@ void spline::set_points(const std::vector<double>& x,
             assert(false);
         }
 
+        for(int i = 0; i < n; i++)
+        {
+            for(int j = 0; j < n; j++)
+            {
+                printf("%f ", A(i,j));
+            }
+            printf("\n");
+        }
+
+        printf("b: ");
+        for (int i = 0; i < n; i++)
+        {
+            printf("%f ", rhs[i]);
+        }
+        printf("\n");
         // solve the equation system to obtain the parameters b[]
         m_b=A.lu_solve(rhs);
 
@@ -373,6 +388,7 @@ void spline::set_points(const std::vector<double>& x,
     m_c[n-1]=3.0*m_a[n-2]*h*h+2.0*m_b[n-2]*h+m_c[n-2];   // = f'_{n-2}(x_{n-1})
     if(m_force_linear_extrapolation==true)
         m_b[n-1]=0.0;
+
 }
 
 double spline::operator() (double x) const
@@ -395,6 +411,9 @@ double spline::operator() (double x) const
         // interpolation
         interpol=((m_a[idx]*h + m_b[idx])*h + m_c[idx])*h + m_y[idx];
     }
+    printf("a: %f, b: %f, c: %f, d: %f\n", m_a[idx], m_b[idx], m_c[idx], m_y[idx]);
+    printf("%f\n", interpol);
+    printf("searched idx: %d, %f\n", idx, x);
     return interpol;
 }
 
